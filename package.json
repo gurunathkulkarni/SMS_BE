@@ -1,0 +1,24 @@
+{
+  "name": "sms_be",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/cors": "^8.1.0",
+    "@fastify/helmet": "^9.1.0",
+    "@fastify/routes": "^5.0.0",
+    "@fastify/swagger": "^7.4.1",
+    "fastify": "^4.15.0",
+    "mongoose": "^7.0.3",
+    "nodemon": "^2.0.22"
+  },
+  "devDependencies": {
+    "prisma": "^4.12.0"
+  }
+}
