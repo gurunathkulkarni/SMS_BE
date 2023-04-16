@@ -1,4 +1,4 @@
-const { createRole, getRole } = require("../handler/Role/role");
+const { createRole, getRole, updateRole, deleteRole } = require("../handler/Role/roleHndl");
 const { routesRegister } = require("../utils/utils");
 
 module.exports = async (fastify) => {
@@ -7,13 +7,23 @@ module.exports = async (fastify) => {
     await routesRegister(fastify, [
         {
             method: 'POST',
-            path: '/role', // Role for creating API routes
+            path: '/roleCrt', // Role for creating API routes
             handler: createRole,
         },
         {
             method: 'GET',
-            path: '/role', // Role for creating API routes
+            path: '/roleGet', // Role for displaying API routes
             handler: getRole,
+        },
+       {
+            method: 'PATCH',
+            path: '/roleUpdt', // Role for updating API routes
+            handler: updateRole,
+        },
+        {
+            method: 'DELETE',
+            path: '/roleDel', // Role for deleting API routes
+            handler:deleteRole,
         }
     ]);
 

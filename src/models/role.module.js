@@ -1,21 +1,17 @@
-const mongoose = require("mongoose");
+const mongoose=require("mongoose");
 
-// create model name varaible
-const ModelName = 'Role';
-
-// this is used to create schema of mongoDb
-const roleSchema = new mongoose.Schema(
-{
-    role_name: { type: 'String', default: null }
-    // permission: { type:  }
-    
-},
-{
-    timestamps: { createdAt: "created_at", updatedAt: "updated_at" },
-}
+const modelName="Role";
+const roleSchema=mongoose.Schema(
+    {
+        Role_Id:{type:"Number", unique:true},
+        Role_Name:{type:"String",require:true, default:null},
+        isActive:{type:"Boolean",require:true, default:true},
+        Created_Date:{type:"Date",require:true, default:Date.now},
+        Modified_Date:{type:"Date",require:true, default:Date.now}
+    },
+    {
+        timestamps: { createdAt: "created_at", updatedAt: "updated_at" },
+    }
 )
-
-// used to create a model from moogoose
-const roleModel = new mongoose.model(ModelName, roleSchema);
-module.exports = roleModel;
-
+const roleModel=mongoose.model(modelName,roleSchema);
+module.exports=roleModel;

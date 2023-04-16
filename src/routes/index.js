@@ -2,12 +2,14 @@
 const school = require('./school');
 const user = require("./user");
 const role = require("./role");
+const cls=require("./class");
 
 module.exports = async (fastify) => {
   fastify.log.info('Registering the routes started');
   await school(fastify);
   await user(fastify);
   await role(fastify);
+  await cls(fastify);
   fastify.log.info('Registering the routes completed');
 };
 

@@ -15,6 +15,7 @@
     "@fastify/routes": "^5.0.0",
     "@fastify/swagger": "^7.4.1",
     "fastify": "^4.15.0",
+    "mongodb": "^5.2.0",
     "mongoose": "^7.0.3",
     "nodemon": "^2.0.22"
   },
